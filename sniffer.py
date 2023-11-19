@@ -20,7 +20,7 @@ dict_arp = {}
 dict_icmp = {}
 
 
-debugger_file = open("debugger.txt", "w")
+
 
 def add_to_arptable(pkt):
     global dict_arp
@@ -49,42 +49,24 @@ def add_to_icmptable(pkt):
 
 
 rawSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)
-
+rawSocket.bind(("wlp0s20f3", 0x0800))
 
 def receive_pkg():
     global count_arp_requests, count_arp_replies, count_icmpv4, count_icmpv6, count_ipv4, count_ipv6, count_tcp, count_udp
     global dict_arp, dict_icmp
-    global debugger_file
+    debugger_file = open("debugger.txt", "w")
     while True:
         pkt = rawSocket.recvfrom(2048)
-
-        eHeader = pkt[0][0:14]
-
-        eth_hdr = struct.unpack("!6s6s2s", eHeader)
-
-        dest_mac = binascii.hexlify(eth_hdr[0]).decode('utf-8')
-        source_mac = binascii.hexlify(eth_hdr[1]).decode('utf-8')
-        eth_type = binascii.hexlify(eth_hdr[2]).decode('utf-8')
-
-        print("Destination MAC: %s" % dest_mac)
-        print("Source MAC: %s" % source_mac)
-        print("Ethernet Type: %s" % eth_type)
-
-        ipHeader = pkt[0][14:34]
-        ip_hdr = struct.unpack("!12s4s4s", ipHeader)
-
-        print("Source IP address: %s" % socket.inet_ntoa(ip_hdr[1]))
-        print("Destination IP address: %s" % socket.inet_ntoa(ip_hdr[2]))
-
         if (sniffer_utils.is_ipv4(pkt[0])):
             count_ipv4 += 1
             if (sniffer_utils.is_icmp(pkt[0])):
                 count_icmpv4 += 1
                 add_to_icmptable(pkt[0])
+                print(sniffer_utils.str_beautify_icmp(pkt[0]))
                 debugger_file.write(sniffer_utils.str_beautify_icmp(pkt[0]) + "\n\n")
             elif (sniffer_utils.is_tcp(pkt[0])):
                 count_tcp += 1
-                debugger_file.write(sniffer_utils.str_beautify_tcp(pkt[0]) + "\n\n")
+                #debugger_file.write(sniffer_utils.str_beautify_tcp(pkt[0]) + "\n\n")
             elif (sniffer_utils.is_udp(pkt[0])):
                 count_udp += 1
                 debugger_file.write(sniffer_utils.str_beautify_udp(pkt[0]) + "\n\n")
@@ -96,6 +78,7 @@ def receive_pkg():
             if (sniffer_utils.is_icmp(pkt[0])):
                 count_icmpv6 += 1
                 add_to_icmptable(pkt[0])
+                print(sniffer_utils.str_beautify_icmp(pkt[0]))
                 debugger_file.write(sniffer_utils.str_beautify_icmp(pkt[0]) + "\n\n")
 
             elif (sniffer_utils.is_tcp(pkt[0])):

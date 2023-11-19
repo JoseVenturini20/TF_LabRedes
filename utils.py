@@ -1,7 +1,7 @@
 import binascii
 import socket
 import struct
-
+import re
 
 class sniffer_utils:
     @staticmethod
@@ -34,11 +34,11 @@ class sniffer_utils:
 
     @staticmethod
     def get_source_mac(pkt):
-        return binascii.hexlify(pkt[6:12]).decode('utf-8')
+        return ':'.join(re.findall('..', binascii.hexlify(pkt[6:12]).decode('utf-8')))
 
     @staticmethod
     def get_dest_mac(pkt):
-        return binascii.hexlify(pkt[0:6]).decode('utf-8')
+        return ':'.join(re.findall('..', binascii.hexlify(pkt[0:6]).decode('utf-8')))
 
     @staticmethod
     def get_eth_type(pkt):
