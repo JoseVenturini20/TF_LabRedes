@@ -131,6 +131,14 @@ class sniffer_utils:
         return sniffer_utils.get_arp_operation(pkt) == 2
 
     @staticmethod
+    def get_arp_sender_and_target(pkt):
+        sender_mac = struct.unpack('!6s', pkt[22:28])[0]
+        sender_ip = socket.inet_ntoa(pkt[28:32])
+        target_mac = struct.unpack('!6s', pkt[32:38])[0]
+        target_ip = socket.inet_ntoa(pkt[38:42])
+        return (sender_mac, sender_ip, target_mac, target_ip)
+    
+    @staticmethod
     def str_beautify_tcp(pkt):
         ip_version = 'IPv4' if sniffer_utils.is_ipv4(pkt) else 'IPv6'
         return "IP Version: %s, Source MAC: %s, Destination MAC: %s, Source IP: %s, Destination IP: %s, Source Port: %s, Destination Port: %s, TCP Flags: %s" % (
@@ -172,10 +180,28 @@ class sniffer_utils:
 
     @staticmethod
     def str_beautify_arp(pkt):
-        return "Source MAC: %s, Destination MAC: %s, Source IP: %s, Destination IP: %s ARP Operation: %s" % (
-            sniffer_utils.get_source_mac(pkt),
-            sniffer_utils.get_dest_mac(pkt),
-            sniffer_utils.get_source_ip(pkt),
-            sniffer_utils.get_dest_ip(pkt),
-            sniffer_utils.get_arp_operation(pkt)
-        )
+        sender_mac, sender_ip, target_mac, target_ip = sniffer_utils.get_arp_sender_and_target(pkt)
+        is_arp_announcement = sniffer_utils.is_arp_request(pkt) and target_ip == sender_ip
+        is_arp_reply = sniffer_utils.is_arp_reply(pkt)
+        if is_arp_announcement:
+            return "ARP ANNOUNCEMENT Source MAC: %s, Source IP: %s, ARP Operation: %s" % (
+                sniffer_utils.get_source_mac(pkt),
+                sender_ip,
+                sniffer_utils.get_arp_operation(pkt)
+            )
+        elif is_arp_reply:
+            return "ARP REPLY Source MAC: %s, Source IP: %s, Destination MAC: %s, Destination IP: %s ARP Operation: %s" % (
+                sender_mac,
+                sender_ip,
+                target_mac,
+                target_ip,
+                sniffer_utils.get_arp_operation(pkt)
+            )
+        else:
+            return "ARP REQUEST Source MAC: %s, Source IP: %s, Destination MAC: %s, Destination IP: %s ARP Operation: %s" % (
+                sender_mac,
+                sender_ip,
+                target_mac,
+                target_ip,
+                sniffer_utils.get_arp_operation(pkt)
+            )
