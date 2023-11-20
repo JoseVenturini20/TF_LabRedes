@@ -59,12 +59,13 @@ rawSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003
 rawSocket.bind(('wlp0s20f3', 0))
 
 
-def receive_pkg():
+def receive_pkg(packets_queue):
     global count_arp_requests, count_arp_replies, count_icmpv4, count_icmpv6, count_ipv4, count_ipv6, count_tcp, count_udp
     global dict_arp, dict_icmp
     global debugger_file
     while True:
         pkt = rawSocket.recvfrom(2048)
+        packets_queue.put(pkt)
         if (sniffer_utils.is_ipv4(pkt[0])):
             count_ipv4 += 1
             if (sniffer_utils.is_icmp(pkt[0])):
