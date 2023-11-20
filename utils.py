@@ -184,10 +184,12 @@ class sniffer_utils:
         is_arp_announcement = sniffer_utils.is_arp_request(pkt) and target_ip == sender_ip
         is_arp_reply = sniffer_utils.is_arp_reply(pkt)
         if is_arp_announcement:
-            return "ARP ANNOUNCEMENT Source MAC: %s, Source IP: %s, ARP Operation: %s" % (
-                sniffer_utils.get_source_mac(pkt),
+            return "ARP ANNOUNCEMENT Source MAC: %s, Source IP: %s, ARP Operation: %s Target MAC: %s, Target IP: %s" % (
+                sender_mac,
                 sender_ip,
-                sniffer_utils.get_arp_operation(pkt)
+                sniffer_utils.get_arp_operation(pkt),
+                target_mac,
+                target_ip
             )
         elif is_arp_reply:
             return "ARP REPLY Source MAC: %s, Source IP: %s, Destination MAC: %s, Destination IP: %s ARP Operation: %s" % (
