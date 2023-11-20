@@ -121,6 +121,14 @@ class sniffer_utils:
             return sniffer_utils.get_icmp_code_ipv4(pkt)
         elif sniffer_utils.is_ipv6(pkt):
             return sniffer_utils.get_icmp_code_ipv6(pkt)
+        
+    @staticmethod
+    def is_arp_request(pkt):
+        return sniffer_utils.get_arp_operation(pkt) == 1
+    
+    @staticmethod
+    def is_arp_reply(pkt):
+        return sniffer_utils.get_arp_operation(pkt) == 2
 
     @staticmethod
     def str_beautify_tcp(pkt):
