@@ -23,6 +23,11 @@ dict_icmp = {}
 debugger_file = open("debugger.txt", "w")
 
 
+def write_to_file_with_limit(path, data, limit):
+    file = open(path, "w")
+    file.write(data[:limit])
+    file.close()
+
 def add_to_arptable(pkt):
     global dict_arp
     arp_hdr = pkt[14:42]
