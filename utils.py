@@ -139,6 +139,15 @@ class sniffer_utils:
         return (sender_mac, sender_ip, target_mac, target_ip)
     
     @staticmethod
+    def get_icmp_source_and_target(pkt):
+        if sniffer_utils.is_ipv4(pkt):
+            return (sniffer_utils.get_source_ip_ipv4(pkt), sniffer_utils.get_dest_ip_ipv4(pkt))
+        elif sniffer_utils.is_ipv6(pkt):
+            return (sniffer_utils.get_source_ip_ipv6(pkt), sniffer_utils.get_dest_ip_ipv6(pkt))
+        else:
+            return None
+    
+    @staticmethod
     def str_beautify_tcp(pkt):
         ip_version = 'IPv4' if sniffer_utils.is_ipv4(pkt) else 'IPv6'
         return "IP Version: %s, Source MAC: %s, Destination MAC: %s, Source IP: %s, Destination IP: %s, Source Port: %s, Destination Port: %s, TCP Flags: %s" % (
