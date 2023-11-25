@@ -85,12 +85,13 @@ def clear_icmp_and_arp_tables():
             dict_arp.clear()
             timer = 10
 
-def receive_pkg(rawSocket):
+def receive_pkg(rawSocket,package_queue):
     global count_arp_requests, count_arp_replies, count_icmpv4, count_icmpv6, count_ipv4, count_ipv6, count_tcp, count_udp
     global dict_arp, dict_icmp
     global debugger_file
     while True:
         pkt = rawSocket.recvfrom(2048)
+        package_queue.put(sniffer_utils.format_packet_data(pkt[0]))
         if (sniffer_utils.is_ipv4(pkt[0])):
             count_ipv4 += 1
             if (sniffer_utils.is_icmp(pkt[0])):
@@ -146,6 +147,8 @@ def check_arp_counts():
         print(key, dict_arp[key]["request"], dict_arp[key]["reply"])
         if ((dict_arp[key]["request"] + 1) * 3 < dict_arp[key]["reply"]):
             print("ARP spoofing detected IP: %s" % key)
+            return True
+    return False
 
 def check_icmp_counts():
     global dict_icmp
@@ -153,18 +156,7 @@ def check_icmp_counts():
         print(key, dict_icmp[key]["request"])
         if ((dict_icmp[key]["request"] + 1) > 100):
             print("ICMP flooding detected IP: %s" % key)
+            return True
+    return False
 
 
-try: 
-    socket = create_raw_socket()
-    thread = threading.Thread(target=receive_pkg, args=(socket,))
-    timer = threading.Thread(target=clear_icmp_and_arp_tables)
-    timer.start()
-    thread.start()
-    thread.join()
-    timer.join()
-
-except KeyboardInterrupt:
-    beatify_counts()
-    debugger_file.close()
-    exit(0)

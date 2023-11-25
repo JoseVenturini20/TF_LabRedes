@@ -121,7 +121,11 @@ class sniffer_utils:
             return sniffer_utils.get_icmp_code_ipv4(pkt)
         elif sniffer_utils.is_ipv6(pkt):
             return sniffer_utils.get_icmp_code_ipv6(pkt)
-        
+    
+    @staticmethod
+    def get_destination_mac(pkt):
+        return ':'.join(re.findall('..', binascii.hexlify(pkt[0:6]).decode('utf-8')))
+
     @staticmethod
     def is_arp_request(pkt):
         return sniffer_utils.get_arp_operation(pkt) == 1
@@ -132,9 +136,11 @@ class sniffer_utils:
 
     @staticmethod
     def get_arp_sender_and_target(pkt):
-        sender_mac = struct.unpack('!6s', pkt[22:28])[0]
+        sender_mac = ':'.join(re.findall('..', binascii.hexlify(struct.unpack('!6s', pkt[22:28])[0]).decode('utf-8')))
+        #sender_mac = struct.unpack('!6s', pkt[22:28])[0]
         sender_ip = socket.inet_ntoa(pkt[28:32])
-        target_mac = struct.unpack('!6s', pkt[32:38])[0]
+        #target_mac = struct.unpack('!6s', pkt[32:38])[0]
+        target_mac = ':'.join(re.findall('..', binascii.hexlify(struct.unpack('!6s', pkt[32:38])[0]).decode('utf-8')))
         target_ip = socket.inet_ntoa(pkt[38:42])
         return (sender_mac, sender_ip, target_mac, target_ip)
     
@@ -216,3 +222,82 @@ class sniffer_utils:
                 target_ip,
                 sniffer_utils.get_arp_operation(pkt)
             )
+        
+    @staticmethod
+    def determine_protocol_type_name(is_arp, is_icmp, is_tcp, is_udp):
+        protocol_type_name = "Unknown"
+        if is_arp:
+            protocol_type_name = 'ARP'
+        elif is_icmp:
+            protocol_type_name = 'ICMP'
+        elif is_tcp:
+            protocol_type_name = 'TCP'
+        elif is_udp:
+            protocol_type_name = 'UDP'
+    
+        return protocol_type_name
+    @staticmethod
+    def format_packet_data(pkt):
+        ip_version = 'IPv4' if sniffer_utils.is_ipv4(pkt) else 'IPv6'
+        
+        src_mac = sniffer_utils.get_source_mac(pkt)
+        dst_mac = sniffer_utils.get_dest_mac(pkt)
+        src_ip = sniffer_utils.get_source_ip(pkt)
+        dst_ip = sniffer_utils.get_dest_ip(pkt)
+        
+        if sniffer_utils.is_tcp(pkt):
+            src_port = sniffer_utils.get_source_port(pkt)
+            dst_port = sniffer_utils.get_dest_port(pkt)
+            tcp_flags = binascii.hexlify(pkt[47:48]).decode('utf-8')
+        elif sniffer_utils.is_udp(pkt):
+            src_port = sniffer_utils.get_source_port(pkt)
+            dst_port = sniffer_utils.get_dest_port(pkt)
+            tcp_flags = None
+        else:
+            src_port = None
+            dst_port = None
+            tcp_flags = None
+        
+        is_arp = sniffer_utils.is_arp(pkt)
+        is_icmp = sniffer_utils.is_icmp(pkt)
+        is_tcp = sniffer_utils.is_tcp(pkt)
+        is_udp = sniffer_utils.is_udp(pkt)
+
+        ARP_and_ICMP_info = None
+
+        if is_arp:
+            sender_mac, sender_ip, target_mac, target_ip = sniffer_utils.get_arp_sender_and_target(pkt)
+            is_arp_request = sniffer_utils.is_arp_request(pkt)
+            is_arp_reply = sniffer_utils.is_arp_reply(pkt)
+
+            if is_arp_request:
+                ARP_and_ICMP_info = f'Who has {target_ip}? Tell {sender_ip}'
+
+            if is_arp_reply:
+                ARP_and_ICMP_info = f'{sender_ip} is at {sender_mac}'
+
+        if is_icmp:
+            icmp_type = sniffer_utils.get_icmp_type(pkt)
+            icmp_code = sniffer_utils.get_icmp_code(pkt)
+            icmp_source_ip, icmp_target_ip = sniffer_utils.get_icmp_source_and_target(pkt)
+
+            if icmp_type == 8:
+                ARP_and_ICMP_info = f'Echo (ping) request from {icmp_source_ip} to {icmp_target_ip}'
+
+            if icmp_type == 0:
+                ARP_and_ICMP_info = f'Echo (ping) reply from {icmp_source_ip} to {icmp_target_ip}'
+
+        packet_data = {
+            'ip_version': ip_version,
+            'src_mac': src_mac,
+            'dst_mac': dst_mac,
+            'src_ip': src_ip,
+            'dst_ip': dst_ip,
+            'src_port': src_port,
+            'dst_port': dst_port,
+            'tcp_flags': tcp_flags,
+            'protocol_type': sniffer_utils.determine_protocol_type_name(is_arp, is_icmp, is_tcp, is_udp),
+            'ARP_and_ICMP_info': ARP_and_ICMP_info
+        }
+        
+        return packet_data
