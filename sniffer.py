@@ -29,7 +29,6 @@ def write_to_file_with_limit(path, data, limit):
     file.write(data[:limit])
     file.close()
 
-
 def beatify_arp_table():
     table = prettytable.PrettyTable()
     table.field_names = ["IP", "REQUESTS", "REPLIES"]

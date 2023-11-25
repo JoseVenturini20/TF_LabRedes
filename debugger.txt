@@ -1,84 +1,86 @@
-IP Version: IPv4, Source MAC: f4:cf:a2:5f:54:55, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.91, Destination IP: 255.255.255.255, Source Port: 49154, Destination Port: 6667
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39528, TCP Flags: 10
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 181.213.132.5, Source Port: 36248, Destination Port: 53
+IP Version: IPv4, Source MAC: 38:e7:c0:92:ee:1a, Destination MAC: 01:00:5e:00:00:fb, Source IP: 192.168.0.107, Destination IP: 224.0.0.251, Source Port: 5353, Destination Port: 5353
 
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 181.213.132.5, Destination IP: 192.168.0.105, Source Port: 53, Destination Port: 36248
+ARP ANNOUNCEMENT Source MAC: f4:cf:a2:5f:54:55, Source IP: 192.168.0.91, ARP Operation: 1 Target MAC: 00:00:00:00:00:00, Target IP: 192.168.0.91
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 181.213.132.5, Source Port: 53341, Destination Port: 53
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 45.134.141.86, Source Port: 38884, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 45.134.141.86, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 38884, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 45.134.141.86, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 38884, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 45.134.141.86, Source Port: 38884, Destination Port: 443, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 181.213.132.5, Destination IP: 192.168.0.105, Source Port: 53, Destination Port: 53341
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 02
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 12
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 38:e7:c0:92:ee:1a, Source IP: 192.168.0.105, Destination IP: 192.168.0.107, Source Port: 35078, Destination Port: 8009, TCP Flags: 02
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 54.94.147.102, Source Port: 58312, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 54.94.147.102, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 58312, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 54.94.147.102, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 58312, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 54.94.147.102, Source Port: 58312, Destination Port: 443, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 19
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 18
-
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.189.173.7, Source Port: 39348, Destination Port: 443, TCP Flags: 11
-
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.189.173.7, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39348, TCP Flags: 10
-
-IP Version: IPv4, Source MAC: 18:69:d8:aa:41:cc, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.112, Destination IP: 255.255.255.255, Source Port: 65379, Destination Port: 6667
-
-IP Version: IPv4, Source MAC: f4:cf:a2:5f:54:55, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.91, Destination IP: 255.255.255.255, Source Port: 49154, Destination Port: 6667
+ARP REQUEST Source MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.1, Destination MAC: 00:00:00:00:00:00, Destination IP: 192.168.0.202 ARP Operation: 1
 
 ARP REQUEST Source MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.1, Destination MAC: 00:00:00:00:00:00, Destination IP: 192.168.0.105 ARP Operation: 1
 
 ARP REPLY Source MAC: 58:6c:25:a2:29:2f, Source IP: 192.168.0.105, Destination MAC: 06:f2:67:20:77:c8, Destination IP: 192.168.0.1 ARP Operation: 2
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 1.1.1.1, Source Port: 56642, Destination Port: 53
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 45.134.141.86, Source Port: 38884, Destination Port: 443, TCP Flags: 10
 
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 1.1.1.1, Destination IP: 192.168.0.105, Source Port: 53, Destination Port: 56642
+IP Version: IPv4, Source MAC: 86:1a:74:19:68:27, Destination MAC: 01:00:5e:00:00:fb, Source IP: 192.168.0.19, Destination IP: 224.0.0.251, Source Port: 5353, Destination Port: 5353
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 52.85.213.115, Source Port: 55440, Destination Port: 443, TCP Flags: 18
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 45.134.141.86, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 38884, TCP Flags: 10
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 52.85.213.115, Source Port: 55430, Destination Port: 443, TCP Flags: 18
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 45.134.141.86, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 38884, TCP Flags: 10
 
-ARP ANNOUNCEMENT Source MAC: f4:cf:a2:5f:54:55, Source IP: 192.168.0.91, ARP Operation: 1 Target MAC: 00:00:00:00:00:00, Target IP: 192.168.0.91
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 45.134.141.86, Source Port: 38884, Destination Port: 443, TCP Flags: 10
 
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 52.85.213.115, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 55440, TCP Flags: 10
+ARP REQUEST Source MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.1, Destination MAC: 00:00:00:00:00:00, Destination IP: 192.168.0.202 ARP Operation: 1
 
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 52.85.213.115, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 55430, TCP Flags: 10
+IP Version: IPv4, Source MAC: f4:cf:a2:5f:54:55, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.91, Destination IP: 255.255.255.255, Source Port: 49154, Destination Port: 6667
 
-IP Version: IPv4, Source MAC: 18:69:d8:aa:41:cc, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.112, Destination IP: 255.255.255.255, Source Port: 65379, Destination Port: 6667
+ARP REQUEST Source MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.1, Destination MAC: 00:00:00:00:00:00, Destination IP: 192.168.0.202 ARP Operation: 1
 
-IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 52.85.213.115, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 55440, TCP Flags: 18
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 181.213.132.5, Source Port: 33545, Destination Port: 53
 
-IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 52.85.213.115, Source Port: 55440, Destination Port: 443, TCP Flags: 10
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 181.213.132.5, Destination IP: 192.168.0.105, Source Port: 53, Destination Port: 33545
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 02
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 02
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 12
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39536, TCP Flags: 12
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39536, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39536, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39536, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 20.42.65.84, Source Port: 39546, Destination Port: 443, TCP Flags: 18
+
+IP Version: IPv4, Source MAC: 38:e7:c0:92:ee:1a, Destination MAC: ff:ff:ff:ff:ff:ff, Source IP: 192.168.0.107, Destination IP: 255.255.255.255, Source Port: 6537, Destination Port: 6537
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39536, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 10
+
+IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 20.42.65.84, Destination IP: 192.168.0.105, Source Port: 443, Destination Port: 39546, TCP Flags: 10
 
