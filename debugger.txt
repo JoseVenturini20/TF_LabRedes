@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 201.66.172.205, Destination IP: 192.168.0.105, Source Port: 59366, Destination Port: 36886, TCP Flags: 10
 
 IP Version: IPv4, Source MAC: 06:f2:67:20:77:c8, Destination MAC: 58:6c:25:a2:29:2f, Source IP: 201.66.172.205, Destination IP: 192.168.0.105, Source Port: 59366, Destination Port: 36886, TCP Flags: 10
@@ -1634,3 +1635,5 @@ IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77
 
 IP Version: IPv4, Source MAC: 58:6c:25:a2:29:2f, Destination MAC: 06:f2:67:20:77:c8, Source IP: 192.168.0.105, Destination IP: 201.66.172.205, Source Port: 36886, Destination Port: 59366, TCP Flags: 18
 
+=======
+>>>>>>> f8d2aeff0f1f2e7c35033dfb81d182f731571b0e

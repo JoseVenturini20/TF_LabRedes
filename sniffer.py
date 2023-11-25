@@ -28,7 +28,10 @@ def write_to_file_with_limit(path, data, limit):
     file = open(path, "w")
     file.write(data[:limit])
     file.close()
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8d2aeff0f1f2e7c35033dfb81d182f731571b0e
 
 def beatify_arp_table():
     table = prettytable.PrettyTable()
@@ -64,6 +67,12 @@ def add_to_icmptable(pkt):
     check_icmp_counts()
 
 
+<<<<<<< HEAD
+=======
+rawSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003))
+
+rawSocket.bind(('eth0', 0))
+>>>>>>> f8d2aeff0f1f2e7c35033dfb81d182f731571b0e
 
 
 def create_raw_socket():
@@ -147,6 +156,7 @@ def check_arp_counts():
         print(key, dict_arp[key]["request"], dict_arp[key]["reply"])
         if ((dict_arp[key]["request"] + 1) * 3 < dict_arp[key]["reply"]):
             print("ARP spoofing detected IP: %s" % key)
+<<<<<<< HEAD
             return True
     return False
 
@@ -160,3 +170,26 @@ def check_icmp_counts():
     return False
 
 
+=======
+
+try: 
+    thread = threading.Thread(target=receive_pkg)
+    thread.start()
+    thread.join()
+except KeyboardInterrupt:
+    print("Exiting...")
+    print("ARP requests: %d" % count_arp_requests)
+    print("ARP replies: %d" % count_arp_replies)
+    print("ICMPv4 packets: %d" % count_icmpv4)
+    print("ICMPv6 packets: %d" % count_icmpv6)
+    print("IPv4 packets: %d" % count_ipv4)
+    print("IPv6 packets: %d" % count_ipv6)
+    print("TCP packets: %d" % count_tcp)
+    print("UDP packets: %d" % count_udp)
+    print("ARP table: ")
+    print(dict_arp)
+    print("ICMP table: ")
+    print(dict_icmp)
+    debugger_file.close()
+    exit(0)
+>>>>>>> f8d2aeff0f1f2e7c35033dfb81d182f731571b0e
