@@ -80,8 +80,11 @@ def clear_icmp_and_arp_tables():
             print("Clearing ICMP and ARP tables")
             beatify_arp_table()
             beatify_icmp_table()
-            dict_icmp.clear()
-            dict_arp.clear()
+            for key in dict_icmp:
+                dict_icmp[key]["request"] = 0
+            for key in dict_arp:
+                dict_arp[key]["request"] = 0
+                dict_arp[key]["reply"] = 0
             timer = 10
 
 def receive_pkg(rawSocket,package_queue):
@@ -104,7 +107,8 @@ def receive_pkg(rawSocket,package_queue):
                 count_udp += 1
                 debugger_file.write(sniffer_utils.str_beautify_udp(pkt[0]) + "\n\n")
             else:
-                print("Unknown IPv4 protocol")
+                pass
+                #print("Unknown IPv4 protocol")
 
         if (sniffer_utils.is_ipv6(pkt[0])):
             count_ipv6 += 1
@@ -119,7 +123,8 @@ def receive_pkg(rawSocket,package_queue):
                 count_udp += 1
                 debugger_file.write(sniffer_utils.str_beautify_udp(pkt[0]) + "\n\n")
             else:
-                print("Unknown IPv6 protocol")
+                pass
+                #print("Unknown IPv6 protocol")
 
         if (sniffer_utils.is_arp(pkt[0])):
             debugger_file.write(sniffer_utils.str_beautify_arp(pkt[0]) + "\n\n")
@@ -137,25 +142,32 @@ def receive_pkg(rawSocket,package_queue):
                     dict_arp[sender_ip]["reply"] += 1
                 count_arp_replies += 1
             else:
-                print("Unknown ARP packet")
+                pass
+                #print("Unknown ARP packet")
             check_arp_counts()
 
 def check_arp_counts():
     global dict_arp
     for key in dict_arp:
-        print(key, dict_arp[key]["request"], dict_arp[key]["reply"])
         if ((dict_arp[key]["request"] + 1) * 3 < dict_arp[key]["reply"]):
-            print("ARP spoofing detected IP: %s" % key)
+            #print("ARP spoofing detected IP: %s" % key)
             return True
     return False
 
 def check_icmp_counts():
     global dict_icmp
     for key in dict_icmp:
-        print(key, dict_icmp[key]["request"])
-        if ((dict_icmp[key]["request"] + 1) > 100):
-            print("ICMP flooding detected IP: %s" % key)
+        if ((dict_icmp[key]["request"] + 1) > 1000):
+            #print("ICMP flooding detected IP: %s" % key)
             return True
     return False
 
 
+def timer_to_print_counts():
+    global count_arp_requests, count_arp_replies, count_icmpv4, count_icmpv6, count_ipv4, count_ipv6, count_tcp, count_udp
+    while True:
+        time.sleep(10)
+        beatify_counts()
+
+
+threading.Thread(target=timer_to_print_counts).start()
